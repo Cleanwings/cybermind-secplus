@@ -33,16 +33,22 @@ export default function QuizPage() {
         <div key={q.id} className="mb-8 p-4 border rounded-lg">
           <p className="font-medium mb-2">Q{qi + 1}. {q.stem}</p>
           <div className="space-y-2">
-            {q.choices?.map((choice, ci) => (
-              <label key={ci} className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name={`q-${q.id}`}
-                  checked={answers[q.id] === ci}
-                  onChange={() => handleSelect(q.id, ci)}
-                />
-                <span>{choice.label}. {choice.text}</span>
-              </label>
+            {q.choices?.map((choice, ci) => {
+  const label = choice?.label || String.fromCharCode(65 + ci)    // A/B/C/D fallback
+  const text  = choice?.text  || choice?.value || '(option)'      // text fallback
+  return (
+    <label key={ci} className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name={`q-${q.id}`}
+        checked={answers[q.id] === ci}
+        onChange={() => handleSelect(q.id, ci)}
+      />
+      <span>{label}. {text}</span>
+    </label>
+  )
+})}
+
             ))}
           </div>
 
