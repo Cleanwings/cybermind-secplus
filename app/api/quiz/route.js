@@ -1,3 +1,4 @@
+import { askGemini } from '../../../lib/ai/askGemini'
 // app/api/quiz/route.js
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
