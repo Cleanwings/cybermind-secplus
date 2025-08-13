@@ -10,23 +10,22 @@ export default function Home() {
         <p className="mt-4 text-gray-600">
           AI-assisted coaching, performance-based labs, and mastery gates — no fluff.
         </p>
-        
-        <div className="mt-8 flex gap-3">
-          <a href="/lesson" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/lesson" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
             Open Lesson
-          </a>
-          <a href="/quiz" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
+          </Link>
+          <Link href="/quiz" className="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:opacity-90">
             Take Quiz
-          </a>
-          <a href="/lab" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
+          </Link>
+          <Link href="/lab" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
             Do Lab
-          </a>
-          <a href="/gate" className="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:opacity-90">
+          </Link>
+          <Link href="/gate" className="px-4 py-2 rounded-lg border hover:bg-gray-50">
             Mastery Gate
-          </a>
+          </Link>
         </div>
       </section>
     </main>
   )
 }
-
