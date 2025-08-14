@@ -1,6 +1,6 @@
+import { askGemini } from '../../../lib/ai/askGemini'
 // app/api/ask/route.js
 import { NextResponse } from 'next/server'
-import { askGemini } from '../../../lib/ai/askGemini'
 
 // Test in browser: /api/ask?query=Your+question
 export async function GET(req) {
