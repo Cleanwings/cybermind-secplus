@@ -1,7 +1,11 @@
 // app/api/debug-gemini/route.js
-import { NextResponse } from 'next/server'
+export const runtime = 'nodejs'   // force Node so env vars are available
+
 export async function GET() {
   const val = process.env.GOOGLE_API_KEY || ''
-  return NextResponse.json({ hasKey: !!val, length: val.length })
+  return new Response(JSON.stringify({ hasKey: !!val, length: val.length }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' }
+  })
 }
 
